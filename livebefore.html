@@ -96,7 +96,7 @@ var wickets=2;
 var scores=r1+r2;
 document.getElementById('score').innerHTML=scores+"/"+wickets;
 var cr=scores/(overs+1);
-document.getElementById('crr').innerHTML=cr;
+document.getElementById('crr').innerHTML=cr.toPrecision(4);
 document.getElementById('over').innerHTML=overs;
 document.getElementById('wkt').innerHTML="Colin Munro 0(3).";
 
