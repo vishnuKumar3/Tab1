@@ -1,0 +1,145 @@
+<!doctype html>
+<style>th{text-align:left;height:50px;} td{height:30px;}
+
+@media only screen and (max-width:1000px){
+th{text-align:left;height:50px;font-size:40px;} td{height:50px;font-size:40px;}
+#aout{font-size:50px;}
+#score,#crr{font-size:20px;}
+}</style>
+<title>Cric11</title>
+<center><h2><mark style="color:red;">Cric11</mark></h2></center>
+<hr style="color:red;">
+<marquee direction="right"><z id='aout'></z></marquee>
+<hr style="color:red;">
+<b>New Zealand:<a id="score"></a></b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>CRR:<a id='crr'></a></b>
+<form>
+<table>
+<th style="width:200px;">Player</th>
+<th style="width:100px;">Runs</th>
+<th style="width:100px;">Balls</th>
+<th style="width:80px;">4S</th>
+<th style="width:80px;">6S</th>
+<th style="width:80px;">S/R</th>
+<tr>
+<td style="width:200px;"><b id='name1'></b></td>
+<td style="width:100px;"><a id='runs1'></a></td>
+<td style="width:100px;"><c id='balls1'></c></td>
+<td style="width:80px;"><d id='4s1'></d></td>
+<td style="width:80px;"><e id='6s1'></e></td>
+<td style="width:80px;"><f id='sr1out'></f></td>
+</tr>
+<tr>
+<td style="width:200px;"><b id='name2'></b></td>
+<td style="width:100px;"><a id='runs2'></a></td>
+<td style="width:100px;"><c id='balls2'></c></td>
+<td style="width:80px;"><d id='4s2'></d></td>
+<td style="width:80px;"><e id='6s2'></e></td>
+<td style="width:80px;"><f id='sr2out'></f></td>
+</tr>
+</table>
+</form>
+<br>
+<b>Overs Completed:<a id="over"></a></b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Last wkt:<a id='wkt'></a></b>
+<hr style="color:red;">
+<b>Commentry:</b>
+<br><br><b>Jasprit Bumrah continue the attack</b>
+<br><br>2.6:Bhuvaneshwar to williamson,no run.<b>dropped</b> a sitter.
+<br><br>2.5:Bhuvaneshwar to williamson,no run.Good comeback.
+<br><br>2.4:Bhuvaneshwar to Williamson <b>Four.</b>
+<br><br>2.3:Bhuvaneshwar to Guptill 1 run,straight down to the ground. 
+<br><br>2.2:Bhuvaneshwar to Williamson 1 run,to mid-wicket.
+<br><br>2.1:Bhuvaneshwar to williamson <b>Four</b>,drives through the covers.Williamson don't waste time.
+<br><br><b>Bhuvaneshwar kumar comes into the attack</b>
+<br><br>1.6:Bumrah to Guptill <b>out!!!!</b>,bumrah finishes his over by a wicket.A stunner from Hardik Pandya.<br><br><b>That's out! caughtttttt.</b>
+<br><br>1.5:Bumrah to Munro no run,a muted appeal for lbw.
+<br><br>1.4:Bumrah to Munro no run,drive through covers but fielder is there.
+<br><br>1.3:Bumrah to Guptill 1 run to long off.
+<br><br>1.2:Bumarh to Guptill no run,nice yorker.What a comeback from Bumrah.
+<br><br>1.1:Bumrah to Guptill <b>Sixxxxxx</b>.No need to run.What a shot by Guptill!. 
+<br><br><b>Jasprit Bumrah will begin the attack</b>
+<h4>India opt to bowl</h4>
+<h3>Teams:</h3>
+<p>INDIA:<br>Rohit Sharma,Shikhar Dhawan,Virat Kohli(C),Shreyas Iyer,MS Dhoni(WK),Kedar Jadhav,Hardhik Pandya,Yuzavendra Chahal,
+Bhuvaneshwar Kumar,Kuldeep Yadav,Jasprit Bumrah<br><br>NEW ZEALAND:<br>Martin Guptill,Colin Munro,Kane Williamson(C),Tom Latham(WK),Ross Taylor,Colin De Grandhomme,Mitchell Santner,Trent Boult,Matt Henry,Ferguson,Neil Wagner</p>
+
+<script>
+var overs=2;
+var r1=10;
+var b1=4;
+var n1="Martin Guptill*";
+var f1=0;
+var s1=1;
+var x1=(r1/b1)*100;
+document.getElementById('sr1out').innerHTML=x1.toPrecision(4);
+document.getElementById('name1').innerHTML=n1;
+document.getElementById('runs1').innerHTML=r1;
+document.getElementById('balls1').innerHTML=b1;
+document.getElementById('4s1').innerHTML=f1;
+document.getElementById('6s1').innerHTML=s1;
+
+
+var r2=11;
+var b2=5;
+var n2="Kane Williamson";
+var f2=2;
+var s2=0;
+var x2=(r2/b2)*100;
+document.getElementById('sr2out').innerHTML=x2.toPrecision(4);
+document.getElementById('name2').innerHTML=n2;
+document.getElementById('runs2').innerHTML=r2;
+document.getElementById('balls2').innerHTML=b2;
+document.getElementById('4s2').innerHTML=f2;
+document.getElementById('6s2').innerHTML=s2;
+
+var wickets=2;
+var scores=r1+r2;
+document.getElementById('score').innerHTML=scores+"/"+wickets;
+var cr=scores/(overs+1);
+document.getElementById('crr').innerHTML=cr;
+document.getElementById('over').innerHTML=overs;
+document.getElementById('wkt').innerHTML="Colin Munro 0(3).";
+
+window.setInterval(time,1000);
+
+
+var amin=0;
+
+
+
+
+
+document.getElementById('aout').style.color="red";
+
+
+
+
+
+
+var date=new Date();
+var hour=date.getHours();
+var minutes=date.getMinutes();
+var seconds=date.getSeconds();
+var sec=60;
+var seconds=sec-seconds;
+
+var amin=amin-minutes;
+
+function time(){
+	if(amin<0 && seconds>=0 && seconds<=60){
+		document.getElementById('aout').innerHTML="Live";}
+	else{
+		document.getElementById('aout').innerHTML="Match starts in:"+amin+"m"+":"+seconds+"s";}
+	
+if(seconds==0){
+	seconds=60;
+	amin=amin-1;
+	}
+else{
+seconds=seconds-1;
+}}
+</script>
+
+
+
+
+
